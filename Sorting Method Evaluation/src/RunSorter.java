@@ -15,14 +15,23 @@ public class RunSorter {
 		System.out.println("Enter the number of integers to be sorted.");
 		int size = inputChecks(input);
 		
-		// Run sorting
-		System.out.println("Sorting...\n\n");
-		double quicksort = Quicksort.sort(iterations,size);
-		double selectionSortIterative = SelectionSortIterative.sort(iterations,size);
-		double selectionSortRecursive = SelectionSortRecursive.sort(iterations,size);
-		double mergesort = Mergesort.sort(iterations,size);
-		double insertionSort = InsertionSort.sort(iterations,size);
-		double bubbleSort = BubbleSort.sort(iterations,size);
+		// Run sorting iterations number of times
+		System.out.println("\nSorting...\n\n");
+		double quicksort = 0.,
+				selectionSortIterative = 0.,
+				selectionSortRecursive = 0.,
+				mergesort = 0.,
+				insertionSort = 0.,
+				bubbleSort = 0.;
+		for (int i = 0; i < iterations; i ++) {
+			int[] array = fillArray(size);
+			quicksort += Quicksort.sort(array);
+			selectionSortIterative += SelectionSortIterative.sort(array);
+			selectionSortRecursive += SelectionSortRecursive.sort(array);
+			mergesort += Mergesort.sort(array);
+			insertionSort += InsertionSort.sort(array);
+			bubbleSort += BubbleSort.sort(array);
+		}
 		
 		displayResults(quicksort,selectionSortIterative,selectionSortRecursive,mergesort,insertionSort,bubbleSort,iterations,size);
 	}
@@ -51,13 +60,13 @@ public class RunSorter {
 		System.out.println("Number of simulations: " + iterations);
 		System.out.println("Array size: " + size + "\n");
 		
-		DecimalFormat d = new DecimalFormat("0.0000");
-		System.out.printf("%-26s %6f seconds%n","Quicksort",q);
-		System.out.printf("%-26s %6f seconds%n","Selection sort - iterative",si);
-		System.out.printf("%-26s %6f seconds%n","Selection sort - recursive",sr);
-		System.out.printf("%-26s %6f seconds%n","Mergesort",m);
-		System.out.printf("%-26s %6f seconds%n","Insertion sort",i);
-		System.out.printf("%-26s %6f seconds%n","Bubble sort",b);
+		DecimalFormat d = new DecimalFormat("00.0000");
+		System.out.printf("%-26s %8s seconds%n","Quicksort",d.format(q));
+		System.out.printf("%-26s %8s seconds%n","Selection sort - iterative",d.format(si));
+		System.out.printf("%-26s %8s seconds%n","Selection sort - recursive",d.format(sr));
+		System.out.printf("%-26s %8s seconds%n","Mergesort",d.format(m));
+		System.out.printf("%-26s %8s seconds%n","Insertion sort",d.format(i));
+		System.out.printf("%-26s %8s seconds%n","Bubble sort",d.format(b));
 	}
 	
 	public static int[] fillArray(int s) {
