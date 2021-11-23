@@ -23,6 +23,18 @@ public class RunSorter {
 				mergesort = 0.,
 				insertionSort = 0.,
 				bubbleSort = 0.;
+		
+		// Test sorting Classes -- chance each .sort method to return an int[] in each class before running this
+//		int[] s = fillArray(size);
+//		System.out.println(Arrays.toString(s));
+//		System.out.println(Arrays.toString(Quicksort.sort(s)));
+//		System.out.println(Arrays.toString(SelectionSortIterative.sort(s)));
+//		System.out.println(Arrays.toString(SelectionSortRecursive.sort(s)));
+//		System.out.println(Arrays.toString(InsertionSort.sort(s)));
+//		System.out.println(Arrays.toString(BubbleSort.sort(s)));
+//		System.out.println(Arrays.toString(Mergesort.sort(s)));
+		
+		
 		for (int i = 0; i < iterations; i ++) {
 			int[] array = fillArray(size);
 			quicksort += Quicksort.sort(array);
@@ -67,6 +79,7 @@ public class RunSorter {
 		System.out.printf("%-26s %8s seconds%n","Mergesort",d.format(m));
 		System.out.printf("%-26s %8s seconds%n","Insertion sort",d.format(i));
 		System.out.printf("%-26s %8s seconds%n","Bubble sort",d.format(b));
+		
 	}
 	
 	public static int[] fillArray(int s) {

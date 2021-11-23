@@ -4,7 +4,20 @@ public class BubbleSort {
 	
 	public static double sort(int[] s) {
 		
-		return 6.;
+		for (int i = 0; i < s.length - 1; i++) {
+			for (int j = 0; j < s.length - i - 1; j++) {
+				if (s[j] > s[j+1]) {
+					// Swap s[j+1] and s[j]
+					int temp = s[j];
+					s[j] = s[j+1];
+					s[j+1] = temp;
+				}
+			}
+		}
+		
+		
+		
+		return 6;
 	}
 
 }
