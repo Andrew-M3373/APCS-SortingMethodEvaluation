@@ -1,11 +1,11 @@
 import java.util.*;
+import java.time.*;
 
 public class SelectionSortRecursive {
 	
-	public static double sort(int[] s) {
+	public static void sort(int[] s) {
 		
 		selectionSort(s,0,s.length);
-		return 3;
 	}
 	
 	public static void selectionSort(int[] s, int i, int maxIndex) {

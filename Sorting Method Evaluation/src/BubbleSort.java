@@ -1,8 +1,10 @@
 import java.util.*;
+import java.time.*;
 
 public class BubbleSort {
 	
-	public static double sort(int[] s) {
+	public static void sort(int[] s) {
+		
 		
 		for (int i = 0; i < s.length - 1; i++) {
 			for (int j = 0; j < s.length - i - 1; j++) {
@@ -14,10 +16,6 @@ public class BubbleSort {
 				}
 			}
 		}
-		
-		
-		
-		return 6;
 	}
 
 }
