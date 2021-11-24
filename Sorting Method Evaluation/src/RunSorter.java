@@ -15,7 +15,6 @@ public class RunSorter {
 		int size = inputChecks(input);
 				
 		runSortingMethods(iterations,size);
-	
 	}
 	
 	public static void runSortingMethods(int iterations, int size) {
