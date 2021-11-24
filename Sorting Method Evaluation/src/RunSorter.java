@@ -92,8 +92,20 @@ public class RunSorter {
 				bubbleSort = time2-time1;
 				
 				
+				// Fill ArrayList
+				ArrayList<SortingMethod> methods = new ArrayList<SortingMethod>();
+				methods.add(new SortingMethod("Quicksort",quicksort));
+				methods.add(new SortingMethod("Selection sort (iterative)",selectionSortIterative));
+				methods.add(new SortingMethod("Selection sort (recursive)",selectionSortRecursive));
+				methods.add(new SortingMethod("Mergesort",mergesort));
+				methods.add(new SortingMethod("Insertion sort",insertionSort));
+				methods.add(new SortingMethod("Bubble sort",bubbleSort));
 				
-				displayResults(quicksort,selectionSortIterative,selectionSortRecursive,mergesort,insertionSort,bubbleSort,iterations,size);
+				// Sort ArrayList
+				methods.sort(Comparator.comparing(SortingMethod::getValue));
+				
+				
+				displayResults(methods,iterations,size);
 	}
 	
 	public static int inputChecks(Scanner sc) {
@@ -128,19 +140,15 @@ public class RunSorter {
 		return matrix;
 	}
 	
-	public static void displayResults(float q, float si, float sr, float m, float i, float b, int iterations, int size) {
+	public static void displayResults(ArrayList<SortingMethod> list, int iterations, int size) {
 		
 		System.out.println("Number of simulations: " + iterations);
 		System.out.println("Array size: " + size + "\n");
 		
-		DecimalFormat d = new DecimalFormat("0.0000000");
-		System.out.printf("%-26s %9s seconds%n","Quicksort",d.format(q/1000000000/iterations));
-		System.out.printf("%-26s %9s seconds%n","Selection sort (iterative)",d.format(si/1000000000/iterations));
-		System.out.printf("%-26s %9s seconds%n","Selection sort (recursive)",d.format(sr/1000000000/iterations));
-		System.out.printf("%-26s %9s seconds%n","Mergesort",d.format(m/1000000000/iterations));
-		System.out.printf("%-26s %9s seconds%n","Insertion sort",d.format(i/1000000000/iterations));
-		System.out.printf("%-26s %9s seconds%n","Bubble sort",d.format(b/1000000000/iterations));
-		
+		DecimalFormat d = new DecimalFormat("0.0000000000");
+		for (SortingMethod m : list) {
+			System.out.printf("%-26s %12s seconds%n",m.getTitle(),d.format(m.getValue()/1000000000/iterations));
+		}
 	}
 	
 	public static int[] fillArray(int s) {
