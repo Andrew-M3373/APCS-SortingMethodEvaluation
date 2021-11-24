@@ -1,8 +1,9 @@
 import java.util.*;
+import java.time.*;
 
 public class Mergesort {
 	
-	public static double sort(int[] s) {
+	public static void sort(int[] s) {
 		
 		//// Sorting algorithm: https://docs.google.com/document/d/1pDK-Mvet6xD2I1Uv92LaGFqJivMtb8ddoyUfAiPdQJk/edit
 		
@@ -11,13 +12,10 @@ public class Mergesort {
 		// Recursively merge adjacent pairs of lists
 		// Continue until the entire array is sorted
 		// Stores sorted array in new temp array -- must return this when returning sorted array
-		
 		int[] temp = new int[s.length];
 		mergeSortHelper(s,0,s.length-1,temp);
 		
 		
-		
-		return 4;
 	}
 	
 	private static void mergeSortHelper(int[] s, int from, int to, int[] temp) { 

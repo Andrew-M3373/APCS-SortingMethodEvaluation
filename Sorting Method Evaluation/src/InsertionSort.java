@@ -1,8 +1,9 @@
 import java.util.*;
+import java.time.*;
 
 public class InsertionSort {
 	
-	public static double sort(int[] s) {
+	public static void sort(int[] s) {
 		
 		//// Sorting algorithm: https://docs.google.com/document/d/10Z-rjExa9nheKyX93kImcy-4DKzGyvIhbW0m2-vqW5g/edit
 		
@@ -16,10 +17,6 @@ public class InsertionSort {
 				}
 				s[possibleIndex] = temp;
 		}
-			
-			
-			
-		return 5;
 	}
 
 }
