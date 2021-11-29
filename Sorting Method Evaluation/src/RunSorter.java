@@ -38,53 +38,54 @@ public class RunSorter {
 				
 				// Quicksort
 				int[][] matrix = fillMatrix(iterations,size);
+				int[][] matrix0 = matrix;
 				float time1 = System.nanoTime();
-				for (int[] a : matrix) {
+				for (int[] a : matrix0) {
 					Quicksort.sort(a);
 				}
 				float time2 = System.nanoTime();
 				quicksort = time2-time1;
 				
 				// Selection Sort Iterative
-				matrix = fillMatrix(iterations,size);
+				int[][] matrix1 = matrix;
 				time1 = System.nanoTime();
-				for (int[] a : matrix) {
+				for (int[] a : matrix1) {
 					SelectionSortIterative.sort(a);
 				}
 				time2 = System.nanoTime();
 				selectionSortIterative = time2-time1;
 				
 				// Selection Sort Recursive
-				matrix = fillMatrix(iterations,size);
+				int[][] matrix2 = matrix;
 				time1 = System.nanoTime();
-				for (int[] a : matrix) {
+				for (int[] a : matrix2) {
 					SelectionSortRecursive.sort(a);
 				}
 				time2 = System.nanoTime();
 				selectionSortRecursive = time2-time1;
 				
 				// Mergesort
-				matrix = fillMatrix(iterations,size);
+				int[][] matrix3 = matrix;
 				time1 = System.nanoTime();
-				for (int[] a : matrix) {
+				for (int[] a : matrix3) {
 					Mergesort.sort(a);
 				}
 				time2 = System.nanoTime();
 				mergesort = time2-time1;
 				
 				// Insertion sort
-				matrix = fillMatrix(iterations,size);
+				int[][] matrix4 = matrix;
 				time1 = System.nanoTime();
-				for (int[] a : matrix) {
+				for (int[] a : matrix4) {
 					InsertionSort.sort(a);
 				}
 				time2 = System.nanoTime();
 				insertionSort = time2-time1;
 				
 				// Bubble sort
-				matrix = fillMatrix(iterations,size);
+				int[][] matrix5 = matrix;
 				time1 = System.nanoTime();
-				for (int[] a : matrix) {
+				for (int[] a : matrix5) {
 					BubbleSort.sort(a);
 				}
 				time2 = System.nanoTime();
